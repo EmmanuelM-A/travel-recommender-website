@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TravelBloom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url("./assets/holiday.avif");
+      background-size: cover;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .search-controls input, .search-controls button {
+      margin: 5px;
+      padding: 6px;
+    }
+
+    section {
+      padding: 20px;
+      background-color: rgba(255,255,255,0.9);
+    }
+
+    #results img {
+      width: 300px;
+      height: auto;
+      margin-top: 10px;
+    }
+
+    .result-block {
+      margin-bottom: 20px;
+    }
+
+    form input, form textarea {
+      display: block;
+      width: 300px;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="search-controls">
+      <input type="text" id="searchInput" placeholder="Search for beach, temple or country">
+      <button onclick="searchPlaces()">Search</button>
+      <button onclick="clearResults()">Reset</button>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Welcome to TravelBloom</h1>
+    <p>Explore curated travel destinations for beaches, temples, and countries around the world!</p>
+    <div>
+      <a href="#"><img src="./assets/facebook.png" width="24" alt="Facebook"></a>
+      <a href="#"><img src="./assets/instagram.jpg" width="24" alt="Instagram"></a>
+      <a href="#"><img src="./assets/twitter.png" width="24" alt="Twitter"></a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>TravelBloom is your personal travel guide built by passionate explorers and developers.</p>
+    <h3>Our Team</h3>
+    <p><strong>Jane Doe</strong> – Project Manager</p>
+    <p><strong>John Smith</strong> – Full Stack Developer</p>
+    <p><strong>Emily White</strong> – Travel Curator</p>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Message submitted!');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Results -->
+  <section id="results">
+    <h2>Recommendations</h2>
+    <div id="recommendationResults"></div>
+  </section>
+
+  <script src="travel-recommendation.js"></script>
+</body>
+</html>
