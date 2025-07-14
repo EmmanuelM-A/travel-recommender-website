@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelBloom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-size: cover;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    nav .links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .search-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .search-group input {
+      padding: 5px;
+    }
+
+    .section {
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    #results img {
+      width: 300px;
+      height: auto;
+    }
+
+    .team-member {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="search-group">
+      <input type="text" id="searchInput" placeholder="Search for places...">
+      <button onclick="searchPlaces()">Search</button>
+      <button onclick="clearResults()">Reset</button>
+    </div>
+  </nav>
+
+  <div id="home" class="section">
+    <h1>Welcome to TravelBloom</h1>
+    <p>Discover amazing travel destinations across the globe!</p>
+    <p>Explore beaches, temples, and beautiful countries curated just for you.</p>
+    <div>
+      <a href="#"><img src="facebook.png" alt="Facebook" width="30"></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" width="30"></a>
+      <a href="#"><img src="twitter.png" alt="Twitter" width="30"></a>
+    </div>
+  </div>
+
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>TravelBloom is dedicated to helping travelers discover new and exciting places across the globe.</p>
+    <h3>Our Team</h3>
+    <div class="team-member">
+      <strong>Alex Johnson</strong> - Founder & CEO
+    </div>
+    <div class="team-member">
+      <strong>Jamie Lee</strong> - Travel Expert
+    </div>
+    <div class="team-member">
+      <strong>Pat Smith</strong> - Web Developer
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Message submitted!');">
+      <label>Name:</label><br>
+      <input type="text" required><br>
+      <label>Email:</label><br>
+      <input type="email" required><br>
+      <label>Message:</label><br>
+      <textarea rows="5" cols="30" required></textarea><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="results" class="section">
+    <h2>Recommendations</h2>
+    <div id="recommendationResults"></div>
+  </div>
+
+  <script src="travel-recommendation.js"></script>
+</body>
+</html>
